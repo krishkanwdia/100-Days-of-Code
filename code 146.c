@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+// Define nested structure for Date
+struct Date {
+    int day;
+    int month;
+    int year;
+};
+
+// Define Employee structure with nested Date structure
+struct Employee {
+    char name[50];
+    int id;
+    struct Date joiningDate;
+};
+
+int main() {
+    struct Employee emp;
+
+    // Input employee details
+    printf("Enter employee name: ");
+    scanf(" %[^\n]", emp.name);
+
+    printf("Enter employee ID: ");
+    scanf("%d", &emp.id);
+
+    printf("Enter joining date (day month year): ");
+    scanf("%d %d %d", &emp.joiningDate.day, &emp.joiningDate.month, &emp.joiningDate.year);
+
+    // Print employee details
+    printf("\nEmployee Details:\n");
+    printf("Name: %s\n", emp.name);
+    printf("ID: %d\n", emp.id);
+    printf("Joining Date: %02d/%02d/%04d\n", emp.joiningDate.day, emp.joiningDate.month, emp.joiningDate.year);
+
+    return 0;
+}
